@@ -10,6 +10,9 @@ namespace MegaStoreApp.Models
         [Display(Name = "Album")]
         public int AlbumID { get; set; }
 
+        [StringLength(50, MinimumLength = 1)]
+        public string Artist { get; set; }
+
         [StringLength(50, MinimumLength =1)]
         public string Title { get; set; }
        
