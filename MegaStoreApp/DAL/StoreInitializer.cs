@@ -5,11 +5,11 @@ using System.Web;
 using System.Data.Entity;
 using MegaStoreApp.Models;
 using MegaStoreApp.DAL;
-using ContosoUniversity.DAL;
+
 
 namespace MegaStoreApp.DAL
 {
-    public class SchoolInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<StoreContext>
+    public class StoreInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<StoreContext>
     {
         protected override void Seed(StoreContext context)
         {

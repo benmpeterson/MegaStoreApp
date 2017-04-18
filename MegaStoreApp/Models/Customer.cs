@@ -8,6 +8,9 @@ namespace MegaStoreApp.Models
 {
     public class Customer 
     {
+        [Key]
+        public int CustomerID { get; set; }
+
         [Required]
         [StringLength(50)]
         [Display(Name = "Last Name")]
@@ -26,7 +29,7 @@ namespace MegaStoreApp.Models
             }
         }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Creation Date")]
         public DateTime CreationDate { get; set; }
 

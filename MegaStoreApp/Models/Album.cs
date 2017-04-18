@@ -8,6 +8,7 @@ namespace MegaStoreApp.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name = "Album")]
+        [Key]
         public int AlbumID { get; set; }
 
         [StringLength(50, MinimumLength = 1)]
@@ -22,7 +23,7 @@ namespace MegaStoreApp.Models
 
         public int GenreID { get; set; }
 
-        public virtual Genre Genre { get; set; }
+        //public virtual Genre Genre { get; set; }
         public virtual ICollection<Purchases> Purchases { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
     }

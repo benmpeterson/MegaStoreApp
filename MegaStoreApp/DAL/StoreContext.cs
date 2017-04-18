@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace ContosoUniversity.DAL
+namespace MegaStoreApp.DAL
 {
     public class StoreContext : DbContext
     {
@@ -15,7 +15,7 @@ namespace ContosoUniversity.DAL
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<Purchases> Purchases { get; set; }
-        public DbSet<Genre> Genres { get; set; }
+        //public DbSet<Genre> Genres { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

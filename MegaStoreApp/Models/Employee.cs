@@ -8,6 +8,9 @@ namespace MegaStoreApp.Models
 {
     public class Employee
     {
+        [Key]
+        public int EmployeeID { get; set; }
+
         [Required]
         [StringLength(50)]
         [Display(Name = "Last Name")]
