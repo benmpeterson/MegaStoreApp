@@ -57,6 +57,36 @@ namespace MegaStoreApp.DAL
             };
             purchases.ForEach(s => context.Purchases.Add(s));
             context.SaveChanges();
+
+            var employees = new List<Employee>
+            {
+                new Employee { FirstMidName = "Kim",     LastName = "Abercrombie",
+                    HireDate = DateTime.Parse("1995-03-11") },
+                new Employee { FirstMidName = "Fadi",    LastName = "Fakhouri",
+                    HireDate = DateTime.Parse("2002-07-06") },
+                new Employee { FirstMidName = "Roger",   LastName = "Harui",
+                    HireDate = DateTime.Parse("1998-07-01") },
+                new Employee { FirstMidName = "Candace", LastName = "Kapoor",
+                    HireDate = DateTime.Parse("2001-01-15") },
+                new Employee { FirstMidName = "Roger",   LastName = "Zheng",
+                    HireDate = DateTime.Parse("2004-02-12") }
+            };
+            employees.ForEach(s => context.Employees.Add(s));
+            context.SaveChanges();
+
+            var genres = new List<Genre>
+            {
+                new Genre { Name = "Hip-Hop",     TotalSold = 350000,                    
+                    FullName  = employees.Single( i => i.LastName == "Abercrombie").FullName },
+                new Genre { Name = "Indie Rock", TotalSold = 10000,                    
+                    FullName = employees.Single( i => i.LastName == "Fakhouri").FullName },
+                new Genre { Name = "Electronic", TotalSold = 20000,                    
+                    FullName = employees.Single( i => i.LastName == "Harui").FullName },
+                new Genre { Name = "Soul",   TotalSold = 5000,                    
+                    FullName = employees.Single( i => i.LastName == "Kapoor").FullName }
+            };
+            genres.ForEach(s => context.Genres.Add(s));
+            context.SaveChanges();
         }
     }
 }

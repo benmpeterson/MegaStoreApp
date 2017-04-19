@@ -13,13 +13,15 @@ namespace MegaStoreApp.Models
         public int GenreID { get; set; }
 
         [StringLength(50, MinimumLength = 1)]
+        [Display(Name="Genre")]
         public string Name { get; set; }
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
+        [Display(Name="Total Sales")]
         public decimal TotalSold { get; set; }
 
-        [Display(Name = "GenreMaster")]
-        public int? EmployeeID { get; set; }
+        [Display(Name = "Genre Expert")]
+        public string FullName { get; set; }
     }
 }
