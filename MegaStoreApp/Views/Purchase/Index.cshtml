@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MegaStoreApp.Models.Purchases>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Album.Artist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Album.Artist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PurchasesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PurchasesID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PurchasesID })
+        </td>
+    </tr>
+}
+
+</table>
