@@ -16,14 +16,17 @@ namespace MegaStoreApp.Models
 
         [StringLength(50, MinimumLength =1)]
         public string Title { get; set; }
-       
+
+        [StringLength(50, MinimumLength = 1)]
+        public string Genre { get; set; }
+
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
 
-        public int GenreID { get; set; }
+        
 
-        //public virtual Genre Genre { get; set; }
+        public virtual Genre GenreCategory { get; set; }
         public virtual ICollection<Purchases> Purchases { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
     }

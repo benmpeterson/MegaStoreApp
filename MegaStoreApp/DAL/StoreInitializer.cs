@@ -29,13 +29,13 @@ namespace MegaStoreApp.DAL
             context.SaveChanges();
             var albums = new List<Album>
             {
-            new Album{AlbumID=1050,Artist = "Kendrick Lamar",Title="Damn",Price=9.99M,},
-            new Album{AlbumID=4022,Artist = "Daft Punk", Title="RAM",Price=15.00M,},
-            new Album{AlbumID=4041,Artist = "Frankie Cosmos", Title="Next Thing",Price=7.99M,},
-            new Album{AlbumID=1045,Artist = "Frank Ocean", Title="Blonde",Price=8.99M,},
-            new Album{AlbumID=3141,Artist = "The Knife", Title="Silent Shout",Price=5.57M,},
-            new Album{AlbumID=2021,Artist = "Kanye West", Title="The College Dropout",Price=3.99M,},
-            new Album{AlbumID=2042,Artist = "Marvin Gaye",Title="What's Going On",Price=9.99M,}
+            new Album{AlbumID=1050,Artist = "Kendrick Lamar",Title="Damn",Genre="Hip-Hop",Price=9.99M,},
+            new Album{AlbumID=4022,Artist = "Daft Punk", Title="RAM",Genre="Electronic",Price=15.00M,},
+            new Album{AlbumID=4041,Artist = "Frankie Cosmos", Title="Next Thing",Genre="Indie Rock",Price=7.99M,},
+            new Album{AlbumID=1045,Artist = "Frank Ocean", Title="Blonde",Genre="Hip-Hop",Price=8.99M,},
+            new Album{AlbumID=3141,Artist = "The Knife", Title="Silent Shout", Genre = "Electronic",Price=5.57M,},
+            new Album{AlbumID=2021,Artist = "Kanye West", Title="The College Dropout", Genre = "Hip Hop",Price=3.99M,},
+            new Album{AlbumID=2042,Artist = "Marvin Gaye",Title="What's Going On", Genre = "Soul" ,Price=9.99M,}
             };
             albums.ForEach(s => context.Albums.Add(s));
             context.SaveChanges();
