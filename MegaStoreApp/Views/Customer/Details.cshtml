@@ -34,6 +34,28 @@
             @Html.DisplayFor(model => model.CreationDate)
         </dd>
 
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Purchased Albums</th>
+                    <th>Customer Rating</th>
+                </tr>
+                @foreach (var item in Model.Purchases)
+                {
+                    <tr>
+                        <td>                            
+                            <p>@Html.DisplayFor(modelItem => item.Album.Artist) -
+                            @Html.DisplayFor(modelItem => item.Album.Title) 
+                                </p>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rating) Stars
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
     </dl>
 </div>
 <p>

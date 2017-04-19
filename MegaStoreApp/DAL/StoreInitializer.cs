@@ -42,18 +42,18 @@ namespace MegaStoreApp.DAL
 
             var purchases = new List<Purchases>
             {
-            new Purchases{CustomerID=1,AlbumID=1050,Rating=Rating.five},
-            new Purchases{CustomerID=1,AlbumID=4022,Rating=Rating.four},
-            new Purchases{CustomerID=1,AlbumID=4041,Rating=Rating.five},
-            new Purchases{CustomerID=2,AlbumID=1045,Rating=Rating.three},
-            new Purchases{CustomerID=2,AlbumID=3141,Rating=Rating.five},
-            new Purchases{CustomerID=2,AlbumID=2021,Rating=Rating.five},
+            new Purchases{CustomerID=1,AlbumID=1050,Rating=Rating.Five},
+            new Purchases{CustomerID=1,AlbumID=4022,Rating=Rating.Four},
+            new Purchases{CustomerID=1,AlbumID=4041,Rating=Rating.Five},
+            new Purchases{CustomerID=2,AlbumID=1045,Rating=Rating.Three},
+            new Purchases{CustomerID=2,AlbumID=3141,Rating=Rating.Five},
+            new Purchases{CustomerID=2,AlbumID=2021,Rating=Rating.Five},
             new Purchases{CustomerID=3,AlbumID=1050},
-            new Purchases{CustomerID=4,AlbumID=1050,Rating=Rating.three},
-            new Purchases{CustomerID=4,AlbumID=4022,Rating=Rating.five},
-            new Purchases{CustomerID=5,AlbumID=4041,Rating=Rating.two},
+            new Purchases{CustomerID=4,AlbumID=1050,Rating=Rating.Three},
+            new Purchases{CustomerID=4,AlbumID=4022,Rating=Rating.Five},
+            new Purchases{CustomerID=5,AlbumID=4041,Rating=Rating.Two},
             new Purchases{CustomerID=6,AlbumID=1045},
-            new Purchases{CustomerID=7,AlbumID=3141,Rating=Rating.five},
+            new Purchases{CustomerID=7,AlbumID=3141,Rating=Rating.Five},
             };
             purchases.ForEach(s => context.Purchases.Add(s));
             context.SaveChanges();
@@ -87,6 +87,64 @@ namespace MegaStoreApp.DAL
             };
             genres.ForEach(s => context.Genres.Add(s));
             context.SaveChanges();
+
+            //Another way to add Purchases, less clean but more control
+            //var purchase = new List<Purchases>
+            //{
+            //    new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Alexander").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde" ).AlbumID,
+            //        Rating = Rating.five
+            //    },
+            //     new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Alexander").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde" ).AlbumID,
+            //        Rating = Rating.three
+            //     },
+
+            //     new Purchases {
+            //         CustomerID = customers.Single(s => s.LastName == "Alonso").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde" ).AlbumID,
+            //        Rating = Rating.four
+            //     },
+            //     new Purchases {
+            //         CustomerID = customers.Single(s => s.LastName == "Alonso").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde" ).AlbumID,
+            //        Rating = Rating.two
+            //     },
+            //     new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Alonso").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde" ).AlbumID,
+            //        Rating = Rating.five
+            //     },
+            //     new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Anand").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "RAM" ).AlbumID
+            //     },
+            //     new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Anand").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde").AlbumID,
+            //        Rating = Rating.four
+            //     },
+            //    new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Barzdukas").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde").AlbumID,
+            //        Rating = Rating.two
+            //     },
+            //     new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Li").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde").AlbumID,
+            //        Rating = Rating.three
+            //     },
+            //     new Purchases {
+            //        CustomerID = customers.Single(s => s.LastName == "Justice").CustomerID,
+            //        AlbumID = albums.Single(c => c.Title == "Blonde").AlbumID,
+            //        Rating = Rating.five
+            //     }
+            //};
+
+            //purchase.ForEach(s => context.Purchases.Add(s));
+            //context.SaveChanges();
         }
     }
 }

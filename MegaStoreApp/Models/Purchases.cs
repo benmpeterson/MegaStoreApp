@@ -4,7 +4,7 @@ namespace MegaStoreApp.Models
 {
     public enum Rating
     {
-        one = 1, two = 2, three = 3, four = 4, five = 5
+        One = 1, Two = 2, Three = 3, Four = 4, Five = 5
     }
 
 
