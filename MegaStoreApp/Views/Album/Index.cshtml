@@ -9,26 +9,26 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-inverse">
     <tr>
-        <th>
+        <th class="text-success">
             @Html.DisplayNameFor(model => model.Artist)
         </th>
-        <th>
+        <th class="text-success">
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        <th class="text-success">
             @Html.DisplayNameFor(model => model.Genre)
         </th>
-        <th>
+        <th class="text-success">
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr >
+        <td class="text-primary">
             @Html.DisplayFor(modelItem => item.Artist)
         </td>
         <td>
