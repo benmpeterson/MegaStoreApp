@@ -1,5 +1,6 @@
 ﻿@model MegaStoreApp.Models.Customer
 
+
 @{
     ViewBag.Title = "Create";
 }
@@ -40,8 +41,8 @@
         </div>
 
         <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-        <table>
+        <div class="col-md-offset-2">
+        <table class="table-responsive col-lg-pull-2">
             <tr>
                 @{
                     int cnt = 0;
@@ -53,11 +54,11 @@
                         {
                             @:</tr><tr>
                         }
-                        @:<td>
+                        @:<td class="btn-group table-bordered table-bordered">
                             <input type="checkbox"
                                 name="purchasedAlbums"
                                 value="@course.AlbumID"/>
-                                @course.AlbumID@:  @course.Title
+                                @course.AlbumID@: - @course.Title
                         @:</td>
                     }
                     @:</tr>

@@ -2,7 +2,7 @@
 {
     public class AssignedCourseData
     {
-        public int AlbumID { get; set; }
+        public string AlbumID { get; set; }
         public string Title { get; set; }
         public bool Assigned { get; set; }
     }

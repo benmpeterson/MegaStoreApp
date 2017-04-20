@@ -66,8 +66,7 @@ namespace MegaStoreApp.Controllers
             db.SaveChanges();
             if (purchasedAlbums != null)
             {
-                //customer.Purchases = new List<Purchases>();
-                
+                                
                 foreach (var purchase in purchasedAlbums)
                 {
                     customer.AlbumID = Int32.Parse(purchase);
@@ -79,7 +78,7 @@ namespace MegaStoreApp.Controllers
                     };
                    
                     db.Purchases.Add(p);
-                    //db.SaveChanges();
+                    
                 }
             }
 
@@ -92,7 +91,7 @@ namespace MegaStoreApp.Controllers
                 return RedirectToAction("Index");
             }
             db.SaveChanges();
-            PopulateAssignedCourseData(customer);
+            //PopulateAssignedCourseData(customer);
             return View(customer);
         }
 
@@ -100,50 +99,50 @@ namespace MegaStoreApp.Controllers
 
         private void PopulateAssignedCourseData(Customer customer)
         {
-            var allCourses = db.Purchases;
+            var albums = db.Albums;
             var instructorCourses = new HashSet<int>(customer.Purchases.Select(c => c.AlbumID));
             var viewModel = new List<AssignedCourseData>();
-            foreach (var course in allCourses)
+            foreach (var album in albums)
             {
                 viewModel.Add(new AssignedCourseData
                 {
-                    AlbumID = course.AlbumID,
-                    Title = course.Album.Title,
-                    Assigned = instructorCourses.Contains(course.AlbumID)
+                    AlbumID = album.Title,
+                    Title = album.Artist,
+                    Assigned = instructorCourses.Contains(album.AlbumID)
                 });
             }
             ViewBag.Albums = viewModel;
         }
 
-        private void UpdateInstructorCourses(string[] purchasedAlbums, Customer instructorToUpdate)
-        {
-            if (purchasedAlbums == null)
-            {
-                instructorToUpdate.Purchases = new List<Purchases>();
-                return;
-            }
+        //private void UpdateInstructorCourses(string[] purchasedAlbums, Customer instructorToUpdate)
+        //{
+        //    if (purchasedAlbums == null)
+        //    {
+        //        instructorToUpdate.Purchases = new List<Purchases>();
+        //        return;
+        //    }
 
-            var selectedCoursesHS = new HashSet<string>(purchasedAlbums);
-            var instructorCourses = new HashSet<int>
-                (instructorToUpdate.Purchases.Select(c => c.AlbumID));
-            foreach (var course in db.Purchases)
-            {
-                if (selectedCoursesHS.Contains(course.AlbumID.ToString()))
-                {
-                    if (!instructorCourses.Contains(course.AlbumID))
-                    {
-                        instructorToUpdate.Purchases.Add(course);
-                    }
-                }
-                else
-                {
-                    if (instructorCourses.Contains(course.AlbumID))
-                    {
-                        instructorToUpdate.Purchases.Remove(course);
-                    }
-                }
-            }
-        }
+        //    var selectedCoursesHS = new HashSet<string>(purchasedAlbums);
+        //    var instructorCourses = new HashSet<int>
+        //        (instructorToUpdate.Purchases.Select(c => c.AlbumID));
+        //    foreach (var course in db.Purchases)
+        //    {
+        //        if (selectedCoursesHS.Contains(course.AlbumID.ToString()))
+        //        {
+        //            if (!instructorCourses.Contains(course.AlbumID))
+        //            {
+        //                instructorToUpdate.Purchases.Add(course);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (instructorCourses.Contains(course.AlbumID))
+        //            {
+        //                instructorToUpdate.Purchases.Remove(course);
+        //            }
+        //        }
+        //    }
+        //}
 
         // GET: Customer/Edit/5
         public ActionResult Edit(int? id)
