@@ -70,9 +70,16 @@ namespace MegaStoreApp.Controllers
                 
                 foreach (var purchase in purchasedAlbums)
                 {
-
-                    customer.AlbumID = Int32.Parse(purchase);                                        
-                    db.SaveChanges();
+                    customer.AlbumID = Int32.Parse(purchase);
+                    Purchases p = new Purchases
+                    {
+                        CustomerID = customer.CustomerID,
+                        AlbumID = customer.AlbumID,
+                        
+                    };
+                   
+                    db.Purchases.Add(p);
+                    //db.SaveChanges();
                 }
             }
 
@@ -84,6 +91,7 @@ namespace MegaStoreApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            db.SaveChanges();
             PopulateAssignedCourseData(customer);
             return View(customer);
         }
