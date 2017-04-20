@@ -10,6 +10,8 @@ namespace MegaStoreApp.Models
     {
         [Key]
         public int CustomerID { get; set; }
+        public int AlbumID { get; set; }
+        public int PurchaseID { get; set; }
 
         [Required]
         [StringLength(50)]

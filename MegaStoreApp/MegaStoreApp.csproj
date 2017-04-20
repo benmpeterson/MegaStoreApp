@@ -158,6 +158,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704200051072_InitialCreate.cs" />
+    <Compile Include="Migrations\201704200051072_InitialCreate.Designer.cs">
+      <DependentUpon>201704200051072_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704200054335_ID.cs" />
+    <Compile Include="Migrations\201704200054335_ID.Designer.cs">
+      <DependentUpon>201704200054335_ID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704200105589_ID2.cs" />
+    <Compile Include="Migrations\201704200105589_ID2.Designer.cs">
+      <DependentUpon>201704200105589_ID2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -231,7 +244,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -247,6 +259,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704200051072_InitialCreate.resx">
+      <DependentUpon>201704200051072_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704200054335_ID.resx">
+      <DependentUpon>201704200054335_ID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704200105589_ID2.resx">
+      <DependentUpon>201704200105589_ID2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
