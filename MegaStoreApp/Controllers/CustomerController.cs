@@ -1,23 +1,19 @@
-﻿using System;
+﻿using MegaStoreApp.DAL;
+using MegaStoreApp.Models;
+using MegaStoreApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MegaStoreApp.DAL;
-using MegaStoreApp.Models;
-using MegaStoreApp.ViewModels;
 
 namespace MegaStoreApp.Controllers
 {
     public class CustomerController : Controller
     {
         private StoreContext db = new StoreContext();
-
-
-
 
         // GET: Customer
         public ActionResult Index()
@@ -69,7 +65,9 @@ namespace MegaStoreApp.Controllers
                                 
                 foreach (var purchase in purchasedAlbums)
                 {
+                    var foo = purchase;
                     customer.AlbumID = Int32.Parse(purchase);
+                    
                     Purchases p = new Purchases
                     {
                         CustomerID = customer.CustomerID,
@@ -106,8 +104,9 @@ namespace MegaStoreApp.Controllers
             {
                 viewModel.Add(new AssignedCourseData
                 {
-                    AlbumID = album.Title,
-                    Title = album.Artist,
+                    AlbumID = album.AlbumID,
+                    Title = album.Title,
+                    Artist = album.Artist,
                     Assigned = instructorCourses.Contains(album.AlbumID)
                 });
             }
