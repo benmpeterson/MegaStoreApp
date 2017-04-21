@@ -26,7 +26,7 @@ namespace MegaStoreApp.Models
 
         public string AlbumArtLocation { get; set; }
 
-        //public string SpotifyURL { get; set; }
+        public string SpotifyURL { get; set; }
 
         public virtual Genre GenreCategory { get; set; }
         public virtual ICollection<Purchases> Purchases { get; set; }
