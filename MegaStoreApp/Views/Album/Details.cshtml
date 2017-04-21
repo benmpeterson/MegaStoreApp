@@ -9,7 +9,7 @@
 <div>
     <h4>Album</h4>
     <hr />
-    <dl class="dl-horizontal col-md-7 col-lg-pull-2">
+    <dl class="dl-horizontal col-md-7 col-sm-pull-0">
         <dt>
             @Html.DisplayNameFor(model => model.Artist)
         </dt>
@@ -45,7 +45,7 @@
         
         
     </dl>
-    <img src="@Url.Content("~/Content/Images/collegedropout.jpg")" class="img-thumbnail" width="304" height="236" />
+    <img src="@Url.Content(Model.AlbumArtLocation)" class="img-thumbnail" width="304" height="236" />
 
 </div>
 <p>

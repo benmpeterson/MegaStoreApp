@@ -7,13 +7,13 @@ namespace MegaStoreApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ID2 : IMigrationMetadata
+    public sealed partial class albumartuniqueid : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ID2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(albumartuniqueid));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704200105589_ID2"; }
+            get { return "201704211841193_albumartuniqueid"; }
         }
         
         string IMigrationMetadata.Source

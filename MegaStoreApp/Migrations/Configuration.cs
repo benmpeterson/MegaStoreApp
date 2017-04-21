@@ -10,7 +10,6 @@ namespace MegaStoreApp.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MegaStoreApp.DAL.StoreContext";
         }
 
         protected override void Seed(MegaStoreApp.DAL.StoreContext context)

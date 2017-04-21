@@ -3,7 +3,7 @@ namespace MegaStoreApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class albumartuniqueid : DbMigration
     {
         public override void Up()
         {
@@ -16,6 +16,7 @@ namespace MegaStoreApp.Migrations
                         Title = c.String(maxLength: 50),
                         Genre = c.String(maxLength: 50),
                         Price = c.Decimal(nullable: false, storeType: "money"),
+                        AlbumArtLocation = c.String(),
                         GenreCategory_GenreID = c.Int(),
                     })
                 .PrimaryKey(t => t.AlbumID)
@@ -64,6 +65,8 @@ namespace MegaStoreApp.Migrations
                 c => new
                     {
                         CustomerID = c.Int(nullable: false, identity: true),
+                        AlbumID = c.Int(nullable: false),
+                        PurchaseID = c.Int(nullable: false),
                         LastName = c.String(nullable: false, maxLength: 50),
                         FirstMidName = c.String(nullable: false, maxLength: 50),
                         CreationDate = c.DateTime(nullable: false),

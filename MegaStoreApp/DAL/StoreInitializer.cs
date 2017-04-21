@@ -1,10 +1,7 @@
-﻿using System;
+﻿using MegaStoreApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Data.Entity;
-using MegaStoreApp.Models;
-using MegaStoreApp.DAL;
 
 
 namespace MegaStoreApp.DAL
@@ -29,15 +26,15 @@ namespace MegaStoreApp.DAL
             context.SaveChanges();
             var albums = new List<Album>
             {
-            new Album{AlbumID=1050,Artist = "Kendrick Lamar",Title="Damn",Genre="Hip-Hop",Price=9.99M,},
-            new Album{AlbumID=4022,Artist = "Daft Punk", Title="RAM",Genre="Electronic",Price=15.00M,},
-            new Album{AlbumID=4041,Artist = "Frankie Cosmos", Title="Next Thing",Genre="Indie Rock",Price=7.99M,},
-            new Album{AlbumID=1045,Artist = "Frank Ocean", Title="Blonde",Genre="Hip-Hop",Price=8.99M,},
-            new Album{AlbumID=3141,Artist = "The Knife", Title="Silent Shout", Genre = "Electronic",Price=5.57M,},
-            new Album{AlbumID=2021,Artist = "Kanye West", Title="The College Dropout", Genre = "Hip Hop",Price=3.99M,},
-            new Album{AlbumID=2042,Artist = "Marvin Gaye",Title="What's Going On", Genre = "Soul" ,Price=9.99M,},
-            new Album{AlbumID=3000,Artist = "Alex G",Title="Rules", Genre = "Indie Rock" ,Price=7.99M,},
-            new Album{AlbumID=7000,Artist = "RadioHead",Title="In Rainbows", Genre = "Electronic" ,Price=9.99M,}
+            new Album{AlbumID=1050,Artist = "Kendrick Lamar",Title="Damn",Genre="Hip-Hop",Price=9.99M,AlbumArtLocation="~/Content/Images/kendrick.jpg"},
+            new Album{AlbumID=4022,Artist = "Daft Punk", Title="RAM",Genre="Electronic",Price=9.99M,AlbumArtLocation="~/Content/Images/daftpunk.jpg"},
+            new Album{AlbumID=4041,Artist = "Frankie Cosmos", Title="Next Thing",Genre="Indie Rock",Price=7.99M,AlbumArtLocation="~/Content/Images/frankiecosmos.jpg"},
+            new Album{AlbumID=1045,Artist = "Frank Ocean", Title="Blonde",Genre="Hip-Hop",Price=9.99M,AlbumArtLocation="~/Content/Images/frankocean.jpg"},
+            new Album{AlbumID=3141,Artist = "The Knife", Title="Silent Shout", Genre = "Electronic",Price=5.57M,AlbumArtLocation="~/Content/Images/theknife.jpg"},
+            new Album{AlbumID=2021,Artist = "Kanye West", Title="The College Dropout", Genre = "Hip Hop",Price=9.99M,AlbumArtLocation="~/Content/Images/collegedropout.jpg"},
+            new Album{AlbumID=2042,Artist = "Marvin Gaye",Title="What's Going On", Genre = "Soul" ,Price=9.99M,AlbumArtLocation="~/Content/Images/marvingaye.jpg"},
+            new Album{AlbumID=3000,Artist = "Alex G",Title="Rules", Genre = "Indie Rock" ,Price=9.99M,AlbumArtLocation="~/Content/Images/rules.jpg"},
+            new Album{AlbumID=7000,Artist = "RadioHead",Title="In Rainbows", Genre = "Electronic" ,Price=9.99M,AlbumArtLocation="~/Content/Images/radiohead.jpg"}
             };
             albums.ForEach(s => context.Albums.Add(s));
             context.SaveChanges();

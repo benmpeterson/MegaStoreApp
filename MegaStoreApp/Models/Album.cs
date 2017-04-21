@@ -24,7 +24,7 @@ namespace MegaStoreApp.Models
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
 
-        
+        public string AlbumArtLocation { get; set; }
 
         public virtual Genre GenreCategory { get; set; }
         public virtual ICollection<Purchases> Purchases { get; set; }
