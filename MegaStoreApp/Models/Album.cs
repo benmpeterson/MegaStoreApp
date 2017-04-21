@@ -22,7 +22,7 @@ namespace MegaStoreApp.Models
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         public string AlbumArtLocation { get; set; }
 
