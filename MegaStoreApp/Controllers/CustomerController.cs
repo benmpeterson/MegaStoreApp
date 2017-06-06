@@ -15,15 +15,11 @@ namespace MegaStoreApp.Controllers
     {
         private StoreContext db = new StoreContext();
 
-        // GET: Customer
         public ActionResult Index()
         {
-
-
             return View(db.Customers.ToList());
         }
 
-        // GET: Customer/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,22 +34,17 @@ namespace MegaStoreApp.Controllers
             return View(customer);
         }
 
-        // GET: Customer/Create
+
         public ActionResult Create()
         {
             var customer = new Customer();
             customer.Purchases = new List<Purchases>();
-            PopulateAssignedCourseData(customer);
+            PopulatePurchasedAlbums(customer);
 
             return View();
         }
 
-        
-
-
-        // POST: Customer/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CustomerID,LastName,FirstMidName,CreationDate")] Customer customer, string[] purchasedAlbums)
@@ -88,62 +79,32 @@ namespace MegaStoreApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            db.SaveChanges();
-            //PopulateAssignedCourseData(customer);
+            db.SaveChanges();            
             return View(customer);
         }
 
 
 
-        private void PopulateAssignedCourseData(Customer customer)
+        private void PopulatePurchasedAlbums(Customer customer)
         {
             var albums = db.Albums;
-            var instructorCourses = new HashSet<int>(customer.Purchases.Select(c => c.AlbumID));
-            var viewModel = new List<AssignedCourseData>();
+            var customerPurchases = new HashSet<int>(customer.Purchases.Select(c => c.AlbumID));
+            var viewModel = new List<AlbumViewModel>();
             foreach (var album in albums)
             {
-                viewModel.Add(new AssignedCourseData
+                viewModel.Add(new AlbumViewModel
                 {
                     AlbumID = album.AlbumID,
                     Title = album.Title,
                     Artist = album.Artist,
-                    Assigned = instructorCourses.Contains(album.AlbumID)
+                    Assigned = customerPurchases.Contains(album.AlbumID)
                 });
             }
             ViewBag.Albums = viewModel;
         }
 
-        //private void UpdateInstructorCourses(string[] purchasedAlbums, Customer instructorToUpdate)
-        //{
-        //    if (purchasedAlbums == null)
-        //    {
-        //        instructorToUpdate.Purchases = new List<Purchases>();
-        //        return;
-        //    }
 
-        //    var selectedCoursesHS = new HashSet<string>(purchasedAlbums);
-        //    var instructorCourses = new HashSet<int>
-        //        (instructorToUpdate.Purchases.Select(c => c.AlbumID));
-        //    foreach (var course in db.Purchases)
-        //    {
-        //        if (selectedCoursesHS.Contains(course.AlbumID.ToString()))
-        //        {
-        //            if (!instructorCourses.Contains(course.AlbumID))
-        //            {
-        //                instructorToUpdate.Purchases.Add(course);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (instructorCourses.Contains(course.AlbumID))
-        //            {
-        //                instructorToUpdate.Purchases.Remove(course);
-        //            }
-        //        }
-        //    }
-        //}
-
-        // GET: Customer/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -158,9 +119,7 @@ namespace MegaStoreApp.Controllers
             return View(customer);
         }
 
-        // POST: Customer/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CustomerID,LastName,FirstMidName,CreationDate")] Customer customer)
@@ -174,7 +133,7 @@ namespace MegaStoreApp.Controllers
             return View(customer);
         }
 
-        // GET: Customer/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -189,7 +148,7 @@ namespace MegaStoreApp.Controllers
             return View(customer);
         }
 
-        // POST: Customer/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

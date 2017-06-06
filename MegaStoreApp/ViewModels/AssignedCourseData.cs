@@ -1,6 +1,6 @@
 ﻿namespace MegaStoreApp.ViewModels
 {
-    public class AssignedCourseData
+    public class AlbumViewModel
     {
         public int AlbumID { get; set; }
         public string Title { get; set; }

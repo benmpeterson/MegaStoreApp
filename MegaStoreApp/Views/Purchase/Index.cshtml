@@ -20,6 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Rating)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.FirstMidName)
+        </th>
         <th></th>
     </tr>
 
@@ -33,6 +36,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.FirstMidName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PurchasesID }) |

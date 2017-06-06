@@ -23,28 +23,12 @@ textarea {
     max-width: 280px;
 }
 
-.navbar-inverse {
-    background-color: #144d34;
-    border-color: #eeeeee;
-}
+/*
 
-.navbar-inverse .navbar-text {  
-  color: black;  
-   background-color:black;  
-}  
+
   
-.navbar-inverse .navbar-nav > li > a {  
-  color: #fff;  
-  font-family:Arial;  
-  font-size:15px;  
-   background-color:transparent;  
-}  
-  
-.navbar-inverse .navbar-nav > li > a:hover,  
-.navbar-inverse .navbar-nav > li > a:focus{  
-  color: black;  
-    
-}  
+
+
 
 .navbar-brand { color: #ffffff }
 .navbar-brand:visited { color: white }
@@ -74,4 +58,31 @@ body {
 * {
     font-size: 26px;
     line-height: 1.5;
+}*/
+
+.navbar-inverse .navbar-text {
+    color: black;
+    background-color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-family: Arial;
+    font-size: 15px;
+    background-color: transparent;
+}  
+  
+
+.navbar-inverse .navbar-nav > li > a:hover,  
+.navbar-inverse .navbar-nav > li > a:focus{  
+  color: black;  
+    
+}
+
+/*.jumbotron {
+    height: 100vh;
+}*/
+
+.jumbotron {
+    border-radius: 100px;
 }

@@ -18,7 +18,7 @@ namespace MegaStoreApp.Controllers
         // GET: Purchase
         public ActionResult Index()
         {
-            var purchases = db.Purchases.Include(p => p.Album).Include(p => p.Customer);
+            var purchases = db.Purchases;
             return View(purchases.ToList());
         }
 

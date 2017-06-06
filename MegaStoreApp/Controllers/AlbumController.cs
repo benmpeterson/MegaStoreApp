@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using MegaStoreApp.DAL;
+using MegaStoreApp.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MegaStoreApp.DAL;
-using MegaStoreApp.Models;
 
 namespace MegaStoreApp.Controllers
 {
@@ -18,7 +14,10 @@ namespace MegaStoreApp.Controllers
         // GET: Album
         public ActionResult Index()
         {
+            //viewModel.Genres = _context.Genres.ToList();
+            
             return View(db.Albums.ToList());
+            
         }
 
         // GET: Album/Details/5
