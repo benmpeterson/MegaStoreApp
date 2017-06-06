@@ -45,7 +45,8 @@
             
         </dt>
         <dd>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumID }, new { @class = "btn btn-default" }) 
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.AlbumID }, new { @class = "btn btn-default" }) 
+            @Html.ActionLink("Back to List", "Index", new { id = "" }, new { @class = "btn btn-default" })*@
         </dd>
     </dl>
 
@@ -70,7 +71,7 @@
     
 
 </div>
-<p>
+<p style="margin-right:100px">
     @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumID }, new { @class = "btn btn-default" }) 
     @Html.ActionLink("Back to List", "Index", new { id = "" }, new { @class = "btn btn-default" })
 </p>

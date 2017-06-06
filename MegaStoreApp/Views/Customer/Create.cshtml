@@ -44,21 +44,18 @@
         <div class="col-md-offset-2">
         <table class="table-responsive col-lg-pull-2">
             <tr>
-                @{
-                    int cnt = 0;
+                @{                    
                     List<MegaStoreApp.ViewModels.AlbumViewModel> albums = ViewBag.Albums;
 
-                    foreach (var course in albums)
+                    foreach (var album in albums)
                     {
-                        if (cnt++ % 3 == 0)
-                        {
-                            @:</tr><tr>
-                        }
-                        @:<td class="btn-group table-bordered table-bordered">
+                        
+                        @:</tr><tr>
+                        @:<td>
                             <input type="checkbox"
                                 name="purchasedAlbums"
-                                value="@course.AlbumID"/>
-                                @course.Artist@: - @course.Title
+                                value="@album.AlbumID"/>
+                                @album.Artist@: - @album.Title
                         @:</td>
                     }
                     @:</tr>

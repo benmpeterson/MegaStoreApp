@@ -55,8 +55,7 @@ namespace MegaStoreApp.Controllers
             {
                                 
                 foreach (var purchase in purchasedAlbums)
-                {
-                    var foo = purchase;
+                {                    
                     customer.AlbumID = Int32.Parse(purchase);
                     
                     Purchases p = new Purchases
@@ -64,17 +63,14 @@ namespace MegaStoreApp.Controllers
                         CustomerID = customer.CustomerID,
                         AlbumID = customer.AlbumID,
                         
-                    };
-                   
-                    db.Purchases.Add(p);
-                    
+                    };                   
+                    db.Purchases.Add(p);                    
                 }
             }
 
 
             if (ModelState.IsValid)
             {
-
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
